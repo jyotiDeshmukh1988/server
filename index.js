@@ -3,6 +3,7 @@ const app = express();
 const port = 5000;
 
 const product = require("./api/product/product");
+const location = require("./api/product/location");
 
 app.use(bodyParser.json());
 
@@ -13,6 +14,7 @@ app.use(
 );
 
 app.use("/api/product", product);
+app.use("/api/location", location);
 
 app.get("/", (req, res) => {
   res.json({ message: "ok" });
